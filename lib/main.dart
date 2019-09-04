@@ -26,16 +26,18 @@ class _HomePage extends State<HomePage> {
         appBar: AppBar(
           title: Text(
             "首页",
-            style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+            style: TextStyle(color: Colors.black),
           ),
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+
           elevation: 0.0,
           actions: <Widget>[
             IconButton(
-              icon: ImageIcon(AssetImage("imgs/search.png")),
-              onPressed: () {},
+              icon: ImageIcon(AssetImage('imgs/search.png',)),
+              color: Color.fromRGBO(68, 68, 68, 1.0),
+              onPressed: (){},
             )
           ],
+          backgroundColor: Colors.white,
         ),
         body: Container(
           child: Column(
@@ -49,13 +51,25 @@ class _HomePage extends State<HomePage> {
           color: Colors.white,
           child: Row(
             children: <Widget>[
-              IconButton(icon: Image.asset('imgs/home.png'), onPressed: () {},),
-              IconButton(icon: Image.asset('imgs/tree.png'),onPressed: (){},),
-              IconButton(icon: Image.asset('imgs/project_yes.png'),onPressed: (){},),
-              IconButton(icon: Image.asset('imgs/user.png'),onPressed: (){},),
-
+              IconButton(
+                icon: Image.asset('imgs/home.png'),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Image.asset('imgs/tree.png'),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Image.asset('imgs/project_yes.png'),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Image.asset('imgs/user.png'),
+                onPressed: () {},
+              ),
             ],
-          mainAxisAlignment: MainAxisAlignment.spaceAround,),
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          ),
         ));
   }
 }
