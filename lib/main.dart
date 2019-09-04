@@ -23,28 +23,39 @@ class _HomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "首页",
-          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-        ),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
-        elevation: 0.0,
-        actions: <Widget>[
-          IconButton(
-            icon: ImageIcon(AssetImage("imgs/search.png")),
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Text("sdfdsf"),
-            Text("sdfsdf"),
+        appBar: AppBar(
+          title: Text(
+            "首页",
+            style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+          ),
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          elevation: 0.0,
+          actions: <Widget>[
+            IconButton(
+              icon: ImageIcon(AssetImage("imgs/search.png")),
+              onPressed: () {},
+            )
           ],
         ),
-      ),
-    );
+        body: Container(
+          child: Column(
+            children: <Widget>[
+              Text("sdfdsf"),
+              Text("sdfsdf"),
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
+          child: Row(
+            children: <Widget>[
+              IconButton(icon: Image.asset('imgs/home.png'), onPressed: () {},),
+              IconButton(icon: Image.asset('imgs/tree.png'),onPressed: (){},),
+              IconButton(icon: Image.asset('imgs/project_yes.png'),onPressed: (){},),
+              IconButton(icon: Image.asset('imgs/user.png'),onPressed: (){},),
+
+            ],
+          mainAxisAlignment: MainAxisAlignment.spaceAround,),
+        ));
   }
 }
