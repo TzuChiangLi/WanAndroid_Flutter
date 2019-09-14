@@ -41,10 +41,14 @@ flutter:
   uses-material-design: true
   assets:
     - imgs/search.png
-    - imgs/home.png
-    - imgs/tree.png
+    - imgs/home_yes.png
+    - imgs/home_no.png
+    - imgs/tree_yes.png
+    - imgs/tree_no.png
     - imgs/project_yes.png
-    - imgs/user.png
+    - imgs/project_no.png
+    - imgs/user_yes.png
+    - imgs/user_no.png
     # To add assets to your application, add an assets section, like this:
     # assets:
     #  - images/a_dot_burr.jpeg
