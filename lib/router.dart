@@ -2,8 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wanandroid_flutter/pages/home/home.dart';
-import 'package:wanandroid_flutter/pages/search/search.dart';
+import 'package:wanandroid_flutter/pages/home/homePage.dart';
+import 'package:wanandroid_flutter/pages/search/searchPage.dart';
 
 class Router {
   static const homePage = "app://";

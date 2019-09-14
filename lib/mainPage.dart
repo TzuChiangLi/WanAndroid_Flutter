@@ -7,7 +7,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
-      title: "flutter",
+      title: "玩安卓",
       home: new MainStatePage(),
     );
   }
