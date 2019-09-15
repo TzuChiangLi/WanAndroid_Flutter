@@ -1,5 +1,4 @@
 //路由表页
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wanandroid_flutter/pages/home/homePage.dart';
@@ -14,8 +13,22 @@ class Router {
       case homePage:
         return HomePage();
       case searchPage:
+        return SearchPage();
+        break;
       default:
         return null;
     }
+  }
+
+  Router.pushNoParams(BuildContext context, String url) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return _getPage(url);
+    }));
+  }
+
+  Router.push(BuildContext context, String url, dynamic params) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return _getPage(url);
+    }));
   }
 }

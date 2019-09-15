@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:flutter/services.dart';
+import 'package:wanandroid_flutter/router.dart';
 
-void main() => runApp(MainPage());
+void main() {
+  runApp(MainPage());
+  if (Platform.isAndroid) {
+// 以下两行 设置android状态栏为透明的沉浸。写在组件渲染之后，是为了在渲染后进行set赋值，覆盖状态栏，写在渲染之前MaterialApp组件会覆盖掉这个值。
+    SystemUiOverlayStyle style =
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+
+    ///这是设置状态栏的图标和字体的颜色
+    ///Brightness.light  一般都是显示为白色
+    ///Brightness.dark 一般都是显示为黑色
+    /// statusBarIconBrightness: Brightness.dark);
+    SystemChrome.setSystemUIOverlayStyle(style);
+  }
+}
 
 class MainPage extends StatelessWidget {
   @override
@@ -33,6 +49,7 @@ class _MainStatePage extends State<MainStatePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: AppBar(
+          brightness: Brightness.light,
           title: Text(
             "首页",
             style: TextStyle(color: Colors.black),
@@ -44,7 +61,9 @@ class _MainStatePage extends State<MainStatePage> {
                 'imgs/search.png',
               )),
               color: Color.fromRGBO(68, 68, 68, 1.0),
-              onPressed: () {},
+              onPressed: () {
+                Router.pushNoParams(context, Router.searchPage);
+              },
             )
           ],
           backgroundColor: Colors.white,
