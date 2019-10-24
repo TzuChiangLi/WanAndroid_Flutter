@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
+import 'package:wanandroid_flutter/pages/home/homePage.dart';
 import 'package:wanandroid_flutter/router.dart';
 
 void main() {
@@ -72,7 +73,16 @@ class _MainStatePage extends State<MainStatePage> {
           onPageChanged: _pageChange,
           controller: _pageController,
           itemBuilder: (BuildContext context, int index) {
-            return new Text("我是第" + index.toString() + "页");
+            switch (index) {
+              case 0:
+                return new HomePage();
+              case 1:
+                return new Text("我是第" + index.toString() + "页");
+              case 2:
+                return new Text("我是第" + index.toString() + "页");
+              case 3:
+                return new Text("我是第" + index.toString() + "页");
+            }
           },
           itemCount: 4,
         ),
