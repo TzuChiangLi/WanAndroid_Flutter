@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:wanandroid_flutter/utils/http/httpCallBack.dart';
-import 'package:wanandroid_flutter/utils/http/httpURL.dart';
-import 'package:wanandroid_flutter/utils/http/httpUtils.dart';
+import 'package:wanandroid_flutter/utils/http/HttpCallBack.dart';
+import 'package:wanandroid_flutter/utils/http/HttpURL.dart';
+import 'package:wanandroid_flutter/utils/http/HttpUtils.dart';
 
 class httpApi {
   //首页轮播Banner
@@ -13,7 +13,4 @@ class httpApi {
       callback.onFailed();
     }
   }
-
-
-
 }

@@ -1,11 +1,12 @@
-class banner {
+
+class Banner {
   List<bannerEntity> data;
   int errorCode;
   String errorMsg;
 
-  banner(this.data, this.errorCode, this.errorMsg);
+  Banner(this.data, this.errorCode, this.errorMsg);
 
-  banner.from(Map<String, dynamic> json) {
+  Banner.from(Map<String, dynamic> json) {
     data = json["data"];
     errorCode = json["errorCode"];
     errorMsg = json["errorMsg"];

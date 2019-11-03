@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:wanandroid_flutter/utils/http/httpCallBack.dart';
+import 'package:wanandroid_flutter/utils/http/HttpCallBack.dart';
 
 class httpUtils {
   static Dio _INSTANCE;

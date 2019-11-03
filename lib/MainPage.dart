@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
-import 'package:wanandroid_flutter/pages/home/homePage.dart';
-import 'package:wanandroid_flutter/router.dart';
+import 'package:wanandroid_flutter/pages/home/HomePage.dart';
+import 'package:wanandroid_flutter/Router.dart';
 
 void main() {
   runApp(MainPage());
