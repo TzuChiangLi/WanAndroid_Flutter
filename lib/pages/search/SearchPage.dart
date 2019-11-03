@@ -21,7 +21,7 @@ class _SearchPage extends State<SearchPage> implements SearchView {
   void initState() {
     //相当于onCreate，在此处初始化数据
     super.initState();
-    _mPresenter.init();
+    _mPresenter.getHotKey();
   }
 
   @override

@@ -1,4 +1,6 @@
 import 'package:wanandroid_flutter/pages/search/SearchPresenter.dart';
+import 'package:wanandroid_flutter/utils/http/HttpApi.dart';
+import 'package:wanandroid_flutter/utils/http/HttpCallBack.dart';
 
 import 'SearchView.dart';
 
@@ -18,7 +20,6 @@ class SearchPresenterImpl implements SearchPresenter{
   }
   @override
   void getHotKey() {
-    // TODO: implement getHotKey
   }
   @override
   void search(String hotKey) {

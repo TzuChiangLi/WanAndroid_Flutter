@@ -1,4 +1,4 @@
-class httpURL {
+class HttpURL {
   static final String BASE_URL = "https://www.wanandroid.com/";
 
   static final String PROJECT_LOAD = "project/list/"; //1/json?cid=294
