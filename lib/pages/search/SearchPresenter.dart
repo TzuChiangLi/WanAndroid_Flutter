@@ -1,4 +1,5 @@
 import 'package:wanandroid_flutter/base/BasePresenter.dart';
+import 'package:wanandroid_flutter/utils/http/HttpCallBack.dart';
 
 abstract class SearchPresenter implements BasePresenter {
   /*

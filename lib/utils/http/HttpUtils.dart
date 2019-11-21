@@ -1,12 +1,13 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
-import 'package:wanandroid_flutter/utils/http/HttpCallBack.dart';
 import 'package:wanandroid_flutter/utils/http/HttpURL.dart';
+import 'package:wanandroid_flutter/utils/http/ResBean.dart';
 
-class httpUtils {
+class HttpUtils {
   static Dio _INSTANCE;
-  HttpCallback _callback;
 
-  static Dio getInstance() {
+  static void init() {
     if (_INSTANCE == null) {
       _INSTANCE = new Dio();
       //设置网址
@@ -15,51 +16,49 @@ class httpUtils {
       _INSTANCE.options.connectTimeout = 5 * 1000;
       _INSTANCE.options.receiveTimeout = 3 * 1000;
     }
-    return _INSTANCE;
   }
 
-  get(String url, FormData params, Function successCallBack,
-      Function errorCallBack) async {
-    _requstHttp(url, successCallBack, 'get', params, errorCallBack);
+  static get(String url, Map<String, dynamic> params, Function onSuccess,
+      Function onFailed) async {
+    _requstHttp(url, onSuccess, 'get', params, onFailed);
   }
 
-  _requstHttp(String url, Function successCallBack,
-      [String method, FormData params, Function errorCallBack]) async {
+  static _requstHttp(String url, Function onSuccess,
+      [String method, Map<String, dynamic> params, Function onFailed]) async {
     Response response;
     if (method == 'get') {
+      //get方法
       if (params != null && params.isNotEmpty) {
-        response = await dio.get(url, queryParameters: params);
+        response = await _INSTANCE.get(url, queryParameters: params);
       } else {
-        response = await dio.get(url);
+        response = await _INSTANCE.get(url);
       }
     } else if (method == 'post') {
+      //post方法
       if (params != null && params.isNotEmpty) {
-        response = await dio.post(url, data: params);
+        response = await _INSTANCE.post(url, data: params);
       } else {
-        response = await dio.post(url);
+        response = await _INSTANCE.post(url);
       }
     }
     String dataStr = json.encode(response.data);
     Map<String, dynamic> dataMap = json.decode(dataStr);
-    if (dataMap == null || dataMap['state'] == 0) {
+    if (dataMap == null || dataMap['errorCode'] != 0) {
       _error(
-          errorCallBack,
+          onFailed,
           '错误码：' +
               dataMap['errorCode'].toString() +
               '，' +
               response.data.toString());
-    } else if (successCallBack != null) {
-      successCallBack(dataMap);
+    } else if (onSuccess != null) {
+      ResBean res = ResBean.fromJson(json.decode(dataStr));
+      onSuccess(jsonEncode(res.data));
     }
   }
 
-  _error(Function errorCallBack, String error) {
-    if (errorCallBack != null) {
-      errorCallBack(error);
+  static _error(Function onFailed, String error) {
+    if (onFailed != null) {
+      onFailed(error);
     }
   }
-
-  //post
-
-  set setCallBack(HttpCallback callback) => _callback = callback;
 }

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wanandroid_flutter/pages/home/HomePage.dart';
 import 'package:wanandroid_flutter/Router.dart';
+import 'package:wanandroid_flutter/utils/http/HttpUtils.dart';
 
 void main() {
   runApp(MainPage());
+  //初始化dio库
+  HttpUtils.init();
   if (Platform.isAndroid) {
 // 以下两行 设置android状态栏为透明的沉浸。写在组件渲染之后，是为了在渲染后进行set赋值，覆盖状态栏，写在渲染之前MaterialApp组件会覆盖掉这个值。
     SystemUiOverlayStyle style =
@@ -48,6 +52,7 @@ class _MainStatePage extends State<MainStatePage> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 1080, height: 1920)..init(context);
     return new Scaffold(
         appBar: AppBar(
           brightness: Brightness.light,
