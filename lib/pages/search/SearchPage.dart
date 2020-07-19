@@ -22,6 +22,7 @@ class _SearchPage extends State<SearchPage> implements SearchView {
   SearchPresenter _mPresenter;
   List<HotKeyData> hotKeys = [];
   TextEditingController controller = new TextEditingController();
+
   @override
   void initState() {
     //相当于onCreate，在此处初始化数据
@@ -47,26 +48,28 @@ class _SearchPage extends State<SearchPage> implements SearchView {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         backgroundColor: ColorsValues.bg_daily_white,
         appBar: AppBar(
-          title: TextField(
-            controller: controller,
-            autofocus: true,
-            style: TextStyle(
-              fontSize: 14,
-            ),
-            decoration: InputDecoration(
-              //设置高度
-              contentPadding: EdgeInsets.fromLTRB(16, 6, 0, 6),
-              hintText: "请输入关键字",
-              hintMaxLines: 1,
-              fillColor: Color.fromARGB(255, 230, 231, 237),
-              filled: true,
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide.none),
+          title: new SizedBox(
+            height: 32,
+            child: TextField(
+              controller: controller,
+              autofocus: true,
+              style: TextStyle(
+                fontSize: 14,
+              ),
+              decoration: InputDecoration(
+                //设置高度
+                contentPadding: EdgeInsets.fromLTRB(16, 4, 0, 2),
+                hintText: "请输入关键字",
+                hintMaxLines: 1,
+                fillColor: Color.fromARGB(255, 230, 231, 237),
+                filled: true,
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide.none),
+              ),
             ),
           ),
           actions: <Widget>[
@@ -129,7 +132,7 @@ class _SearchPage extends State<SearchPage> implements SearchView {
         new ActionChip(
             onPressed: () {
               setState(() {
-                controller.text = controller.text+" "+hotKeys[i].name;
+                controller.text = controller.text + " " + hotKeys[i].name;
               });
             },
             backgroundColor: ColorsValues.bg_edt_view,
