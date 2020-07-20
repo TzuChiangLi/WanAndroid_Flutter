@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:wanandroid_flutter/views/ImageButton.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,10 +11,10 @@ class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      child: new Row(
+      child: new Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Flexible(
+          new Expanded(
               child: new Swiper(
             itemBuilder: (BuildContext context, int index) {
               return Card(
@@ -32,6 +33,16 @@ class _HomePage extends State<HomePage> {
             //如果不填则不显示左右切换箭头
             //control: new SwiperControl(),
           )),
+          new Row(
+            children: <Widget>[
+              new ImageButton(
+                image: "imgs/user_yes.png",
+                text: '按钮',
+                width: 32,
+                onPressed: null,
+              )
+            ],
+          )
         ],
       ),
     );
@@ -41,7 +52,6 @@ class _HomePage extends State<HomePage> {
     return new Image.network(
       "https://www.wanandroid.com/blogimgs/50c115c2-cf6c-4802-aa7b-a4334de444cd.png",
       fit: BoxFit.fitWidth,
-      height: 150,
     );
   }
 }
