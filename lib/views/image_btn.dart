@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wanandroid_flutter/utils/common/color/color_values.dart';
 
 class ImageButton extends StatefulWidget {
   final String image; //图标
@@ -7,13 +8,12 @@ class ImageButton extends StatefulWidget {
   final double width;
   final TextStyle normalStyle;
 
-  const ImageButton(
-      {Key key,
-      this.image,
-      this.onPressed,
-      this.text,
-      this.width,
-      this.normalStyle})
+  const ImageButton({Key key,
+    this.image,
+    this.onPressed,
+    this.text,
+    this.width,
+    this.normalStyle})
       : super(key: key);
 
   @override
@@ -35,16 +35,19 @@ class _ImageButtonState extends State<ImageButton> {
           widget.image.isEmpty
               ? Container()
               : Image(
-                  image: AssetImage(widget.image),
-                  width: widget.width,
-                  height: widget.width,
-                ),
+            image: AssetImage(widget.image),
+            width: widget.width,
+            height: widget.width,
+          ),
           widget.text.isEmpty
               ? Container()
-              : Text(
-                  widget.text,
-                  style: widget.normalStyle,
-                )
+              : Container(
+            padding: EdgeInsets.all(6),
+            child: Text(
+              widget.text,
+              style: TextStyle(color:ColorsValues.text_daily_mode),
+            ),
+          )
         ],
       ),
       onTap: widget.onPressed,

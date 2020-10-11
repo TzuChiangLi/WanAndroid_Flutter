@@ -56,6 +56,7 @@ class _HomePage extends State<HomePage> implements HomeView {
             ),
           ),
           new Container(
+            margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
             padding: EdgeInsets.fromLTRB(16, 12, 12, 16),
             child: new Row(
               //均分布局
