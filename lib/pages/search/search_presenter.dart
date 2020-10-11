@@ -1,4 +1,4 @@
-import 'package:wanandroid_flutter/base/BasePresenter.dart';
+import 'package:wanandroid_flutter/base/base_presenter.dart';
 
 abstract class SearchPresenter implements BasePresenter {
   /*

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:wanandroid_flutter/bean/HotKey.dart';
+import 'package:wanandroid_flutter/bean/hot_key.dart';
 import 'package:wanandroid_flutter/pages/search/search_presenter.dart';
 import 'package:wanandroid_flutter/utils/http/http_api.dart';
 
