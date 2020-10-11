@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
 
 class ColorUtil {
-  static ColorUtil _INSTANCE;
+  static ColorUtil _instance;
 
   static ColorUtil getInstance() {
-    if (_INSTANCE == null) {
-      _INSTANCE = new ColorUtil();
+    if (_instance == null) {
+      _instance = new ColorUtil();
     }
-    return _INSTANCE;
+    return _instance;
   }
 
   //颜色强转

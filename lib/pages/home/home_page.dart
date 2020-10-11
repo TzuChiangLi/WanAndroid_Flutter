@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:wanandroid_flutter/views/ImageButton.dart';
+import 'package:wanandroid_flutter/views/image_btn.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -36,11 +36,29 @@ class _HomePage extends State<HomePage> {
           new Row(
             children: <Widget>[
               new ImageButton(
-                image: "imgs/user_yes.png",
-                text: '按钮',
+                image: "imgs/home_nav.png",
+                text: '导航',
                 width: 32,
                 onPressed: null,
-              )
+              ),
+              new ImageButton(
+                image: "imgs/home_nav.png",
+                text: '导航',
+                width: 32,
+                onPressed: null,
+              ),
+              new ImageButton(
+                image: "imgs/home_nav.png",
+                text: '导航',
+                width: 32,
+                onPressed: null,
+              ),
+              new ImageButton(
+                image: "imgs/home_nav.png",
+                text: '导航',
+                width: 32,
+                onPressed: null,
+              ),
             ],
           )
         ],

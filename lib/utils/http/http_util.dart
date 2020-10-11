@@ -1,20 +1,20 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:wanandroid_flutter/utils/http/HttpURL.dart';
-import 'package:wanandroid_flutter/utils/http/ResBean.dart';
+import 'package:wanandroid_flutter/utils/http/url.dart';
+import 'package:wanandroid_flutter/utils/http/res.dart';
 
 class HttpUtils {
-  static Dio _INSTANCE;
+  static Dio _instance;
 
   static void init() {
-    if (_INSTANCE == null) {
-      _INSTANCE = new Dio();
+    if (_instance == null) {
+      _instance = new Dio();
       //设置网址
-      _INSTANCE.options.baseUrl = HttpURL.BASE_URL;
+      _instance.options.baseUrl = HttpURL.BASE_URL;
       //设置超时
-      _INSTANCE.options.connectTimeout = 5 * 1000;
-      _INSTANCE.options.receiveTimeout = 3 * 1000;
+      _instance.options.connectTimeout = 5 * 1000;
+      _instance.options.receiveTimeout = 3 * 1000;
     }
   }
 
@@ -29,16 +29,16 @@ class HttpUtils {
     if (method == 'get') {
       //get方法
       if (params != null && params.isNotEmpty) {
-        response = await _INSTANCE.get(url, queryParameters: params);
+        response = await _instance.get(url, queryParameters: params);
       } else {
-        response = await _INSTANCE.get(url);
+        response = await _instance.get(url);
       }
     } else if (method == 'post') {
       //post方法
       if (params != null && params.isNotEmpty) {
-        response = await _INSTANCE.post(url, data: params);
+        response = await _instance.post(url, data: params);
       } else {
-        response = await _INSTANCE.post(url);
+        response = await _instance.post(url);
       }
     }
     String dataStr = json.encode(response.data);

@@ -1,12 +1,10 @@
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
 import 'package:wanandroid_flutter/bean/HotKey.dart';
-import 'package:wanandroid_flutter/pages/search/SearchPresenter.dart';
-import 'package:wanandroid_flutter/utils/http/HttpApi.dart';
-import 'package:wanandroid_flutter/utils/http/HttpCallBack.dart';
+import 'package:wanandroid_flutter/pages/search/search_presenter.dart';
+import 'package:wanandroid_flutter/utils/http/http_api.dart';
 
-import 'SearchView.dart';
+import 'search_view.dart';
 
 class SearchPresenterImpl implements SearchPresenter {
   // 这里Presenter需要引入View的实例，来出发View的刷新
@@ -35,7 +33,7 @@ class SearchPresenterImpl implements SearchPresenter {
         //todo 处理数据,传递过来的是json字符串
         List responseJson = json.decode(data);
         List<HotKeyData> hotKeyList =
-        responseJson.map((m) => new HotKeyData.fromJson(m)).toList();
+            responseJson.map((m) => new HotKeyData.fromJson(m)).toList();
         _view.setHotKey(hotKeyList);
 //        List<HotKeyData> result = new List<HotKeyData>.from(data).cast<HotKeyData>();
 //        _view.setHotKey(result);

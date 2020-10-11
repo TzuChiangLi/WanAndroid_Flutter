@@ -1,7 +1,5 @@
-import 'package:dio/dio.dart';
-import 'package:wanandroid_flutter/utils/http/HttpCallBack.dart';
-import 'package:wanandroid_flutter/utils/http/HttpURL.dart';
-import 'package:wanandroid_flutter/utils/http/HttpUtils.dart';
+import 'package:wanandroid_flutter/utils/http/url.dart';
+import 'package:wanandroid_flutter/utils/http/http_util.dart';
 
 class HttpApi {
   static getHotKey(Function onSuccess, Function onFailed) {

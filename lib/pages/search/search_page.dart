@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wanandroid_flutter/bean/HotKey.dart';
-import 'package:wanandroid_flutter/pages/search/SearchPresenter.dart';
-import 'package:wanandroid_flutter/pages/search/SearchPresenterImpl.dart';
-import 'package:wanandroid_flutter/pages/search/SearchView.dart';
-import 'package:wanandroid_flutter/utils/common/color/ColorsValues.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wanandroid_flutter/utils/http/HttpCallBack.dart';
-import 'package:wanandroid_flutter/utils/http/HttpUtils.dart';
+import 'package:wanandroid_flutter/pages/search/search_presenter.dart';
+import 'package:wanandroid_flutter/pages/search/search_presenter_impl.dart';
+import 'package:wanandroid_flutter/pages/search/search_view.dart';
+import 'package:wanandroid_flutter/utils/common/color/color_values.dart';
 
 class SearchPage extends StatefulWidget {
   @override

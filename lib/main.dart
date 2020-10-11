@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wanandroid_flutter/pages/home/HomePage.dart';
-import 'package:wanandroid_flutter/Router.dart';
-import 'package:wanandroid_flutter/utils/http/HttpUtils.dart';
+import 'package:wanandroid_flutter/pages/home/home_page.dart';
+import 'package:wanandroid_flutter/router.dart';
+import 'package:wanandroid_flutter/utils/http/http_util.dart';
 
 void main() {
   runApp(MainPage());
@@ -68,7 +68,7 @@ class _MainStatePage extends State<MainStatePage> {
               )),
               color: Color.fromRGBO(68, 68, 68, 1.0),
               onPressed: () {
-                Router.pushNoParams(context, Router.searchPage);
+                router.pushNoParams(context, router.searchPage);
               },
             )
           ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wanandroid_flutter/utils/common/color/ColorUtil.dart';
 
 class ColorsValues {
   //日间模式的颜色资源管理
