@@ -1,6 +1,5 @@
-
 class Banner {
-  List<bannerEntity> data;
+  List<BannerEntity> data;
   int errorCode;
   String errorMsg;
 
@@ -21,7 +20,7 @@ class Banner {
   }
 }
 
-class bannerEntity {
+class BannerEntity {
   int id;
   String desc;
   String imagePath;
@@ -31,10 +30,10 @@ class bannerEntity {
   int type;
   String url;
 
-  bannerEntity(this.id, this.desc, this.imagePath, this.isVisible, this.order,
+  BannerEntity(this.id, this.desc, this.imagePath, this.isVisible, this.order,
       this.title, this.type, this.url);
 
-  bannerEntity.from(Map<String, dynamic> json) {
+  BannerEntity.fromJson(Map<String, dynamic> json) {
     id = json["id"];
     desc = json["desc"];
     imagePath = json["imagePath"];

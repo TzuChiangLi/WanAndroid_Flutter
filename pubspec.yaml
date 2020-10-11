@@ -45,6 +45,10 @@ flutter:
     - imgs/home_yes.png
     - imgs/home_no.png
     - imgs/home_nav.png
+    - imgs/home_article.png
+    - imgs/home_project.png
+    - imgs/home_official_account.png
+    - imgs/home_nav.png
     - imgs/tree_yes.png
     - imgs/tree_no.png
     - imgs/project_yes.png

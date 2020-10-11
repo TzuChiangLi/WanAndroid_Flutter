@@ -7,12 +7,7 @@ import 'package:wanandroid_flutter/utils/common/color/color_values.dart';
 
 class SearchPage extends StatefulWidget {
   @override
-  _SearchPage createState() {
-    _SearchPage mView = new _SearchPage();
-    SearchPresenter _mPresenter = new SearchPresenterImpl(mView);
-    _mPresenter.init();
-    return mView;
-  }
+  _SearchPage createState() => new _SearchPage();
 }
 
 class _SearchPage extends State<SearchPage> implements SearchView {

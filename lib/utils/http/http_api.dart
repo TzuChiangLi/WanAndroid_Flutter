@@ -10,6 +10,15 @@ class HttpApi {
     });
   }
 
+//首页轮播Banner
+  static getBanner(Function onSuccess, Function onFailed) {
+    return HttpUtils.get(HttpURL.HOME_IMG_BANNER, null, (data) {
+      onSuccess(data);
+    }, (err) {
+      onFailed(err);
+    });
+  }
+
 //  static getHotKey(Function onSuccess, Function onFailed) {
 //    Future<Response> res =
 //        httpUtils.getInstance().get(HttpURL.BASE_URL + HttpURL.HOT_KEY);
