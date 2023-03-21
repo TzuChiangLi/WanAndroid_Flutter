@@ -24,7 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_swiper: ^1.1.6
-  dio: ^3.0.3
+  dio: ">=3.0.3 <6.0.0"
   flutter_screenutil: ^0.5.3  #屏幕适配
 
 dev_dependencies:
